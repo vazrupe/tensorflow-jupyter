@@ -42,7 +42,7 @@ $installation_script = <<SCRIPT
     
   # supervisor configuration and restart
   sudo mkdir /var/log/notebook
-  sudo cp /vagrant/configs/nbserver.conf /etc/supervisor/conf.d
+  sudo cp /vagrant/config/nbserver.conf /etc/supervisor/conf.d
   sudo chown root:root /etc/supervisor/conf.d/nbserver.conf
   sudo chmod 544 /etc/supervisor/conf.d/nbserver.conf
   sudo service supervisor restart
