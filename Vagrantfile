@@ -34,12 +34,14 @@ $installation_script = <<SCRIPT
   # install python3, pip, supervisor and python packages
   sudo apt-get update
   sudo apt-get install -y python3 python3-pip build-essential libssl-dev libffi-dev libxml2-dev supervisor
-  sudo pip3 install --upgrade pip
-  sudo pip3 install numpy pillow scipy matplotlib ipython jupyter virtualenv scikit-learn Pandas scrapy NLTK Seaborn bokeh NetworkX
+  
+  sudo pip3 install -U pip
+  sudo pip3 install -U --retries 10 --timeout 1800 ipython jupyter virtualenv matplotlib pillow
+  sudo pip3 install -U --retries 10 --timeout 1800 numpy scipy scikit-learn Pandas scrapy NLTK Seaborn bokeh NetworkX
   
   # install tensorflow
-  export TF_BINARY_URL=https://storage.googleapis.com/tensorflow/linux/cpu/tensorflow-0.11.0-cp34-cp34m-linux_x86_64.whl
-  sudo pip3 install --upgrade $TF_BINARY_URL
+  export TF_BINARY_URL=https://storage.googleapis.com/tensorflow/linux/cpu/tensorflow-1.1.0-cp34-cp34m-linux_x86_64.whl
+  sudo pip3 install -U $TF_BINARY_URL
 SCRIPT
 
 $copy_config_script = <<SCRIPT

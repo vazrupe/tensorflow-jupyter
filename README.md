@@ -16,16 +16,14 @@ __step 2: enter jupyter page__
 enter [localhost:9191](http://localhost:9191/) with your web browser
 
 # Installed on guest machine
-
-- python3(and pip)
+- python3 (and pip)
 - supervisor
-- [tensorflow](https://www.tensorflow.org/) 0.11
+- [tensorflow](https://www.tensorflow.org/) 1.1
 
 # Configuration (Optional)
 
 ## Change Token
-
-1. Edit `config/nbserver.conf`
+__step 1: Edit `config/nbserver.conf`__
 
 ```
 command=/usr/local/bin/jupyter notebook
@@ -36,13 +34,14 @@ command=/usr/local/bin/jupyter notebook
         --NotebookApp.token="{YOUR_TOKEN}"
 ```
 
-2. reload vagrant box
+__step 2: run vagrant provision__
 
 ```
 ~/tenserflor-jupyter$ vagrant provision --provision-with copy-config
 ``` 
 
-3. enter jupyter page `localhost:9191/?token={YOUR_TOKEN}`
+__step 3: enter jupyter page `localhost:9191/?token={YOUR_TOKEN}`__
+
 
 # License
 MIT
