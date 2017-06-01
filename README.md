@@ -1,8 +1,10 @@
 # tensorflow-jupyter
 installation tensorflow and jupyter on vagrant (with python3)
 
+
 # Requirement
 - [vagrant](https://www.vagrantup.com/)
+
 
 # Usage
 __step 1: create vagrant guest machine__
@@ -15,12 +17,15 @@ __step 2: enter jupyter page__
 
 enter [localhost:9191](http://localhost:9191/) with your web browser
 
+
 # Installed on guest machine
 - python3 (and pip)
-- supervisor
+- [supervisor](http://supervisord.org/)
+- [jupyter](http://jupyter.org/)
 - [tensorflow](https://www.tensorflow.org/) 1.1
 
-# Configuration (Optional)
+
+# Optional Usage
 
 ## Change Token
 __step 1: Edit `config/nbserver.conf`__
@@ -41,6 +46,23 @@ __step 2: run vagrant provision__
 ``` 
 
 __step 3: enter jupyter page `localhost:9191/?token={YOUR_TOKEN}`__
+
+
+## tensorboard
+
+__step 1: save log `./boards` or `/notebooks/boards`__
+
+```
+sample_writer = tf.summary.FileWriter('./boards/sample')
+
+...
+
+sample_writer.add_summary(summary)
+```
+
+__step 2: enter tensorboard page__
+
+[localhost:9192](http://localhost:9192/)
 
 
 # License
