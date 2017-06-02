@@ -25,7 +25,7 @@ enter [localhost:9191](http://localhost:9191/) with your web browser
 - [tensorflow](https://www.tensorflow.org/) 1.1
 
 
-# Optional Usage
+# Using Option
 
 ## Change Token
 __step 1: Edit `config/nbserver.conf`__
